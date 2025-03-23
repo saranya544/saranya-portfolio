@@ -193,7 +193,7 @@ const Portfolio = () => {
       
       <div>
   <a
-  href="#contact"
+  href="#projects"
   className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
     darkMode 
       ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
