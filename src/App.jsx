@@ -220,39 +220,43 @@ const Portfolio = () => {
          
      
 
-      {/* About Section - Modified with image and specified text */}
-      <section id="about" className={`py-20 ${themeStyles.bg} transition-colors duration-300`}>
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center">
-          {/* Left side - Image */}
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <img 
-              src="about-me1.jpg" 
-              alt="Laptop with code and coffee cup" 
-              className="rounded-lg shadow-lg"
-            />
-          </div>
-          
-          {/* Right side - About content with specified text */}
-          <div className="md:w-1/2 md:pl-12">
-            <h2 className={`text-3xl font-bold mb-6 ${themeStyles.sectionHeading}`}>About Me</h2>
-            <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              I'm Saranya Dogiparthi, a dedicated Full-Stack Web Developer with a passion for creating dynamic and user-friendly websites. Skilled in HTML, CSS, JavaScript, PHP, and React.js, I focus on building responsive designs and seamless user experiences. My curiosity for modern web technologies drives me to craft solutions that merge functionality and creativity.
-            </p>
-            <div>
-  <a
-  href="#contact"
-  className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
-    darkMode 
-      ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
-      : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
-  }`}
->
-  view projects
-</a>
-</div>
-          </div>
+      {/* About Section - Modified with image and improved responsive layout */}
+<section id="about" className={`py-20 ${themeStyles.bg} transition-colors duration-300`}>
+  <div className="max-w-6xl mx-auto px-4">
+    {/* Heading appears first on all screen sizes */}
+    <h2 className={`text-3xl font-bold mb-6 ${themeStyles.sectionHeading} text-center md:text-left`}>About Me</h2>
+    
+    <div className="flex flex-col md:flex-row items-center">
+      {/* Image comes second on mobile, but moves to left on desktop */}
+      <div className="w-full md:w-1/2 mb-8 md:mb-0">
+        <img
+          src="about-me1.jpg"
+          alt="Laptop with code and coffee cup"
+          className="rounded-lg shadow-lg mx-auto md:mx-0"
+        />
+      </div>
+      
+      {/* Content comes third on mobile, moves to right on desktop */}
+      <div className="w-full md:w-1/2 md:pl-12">
+        <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          I'm Saranya Dogiparthi, a dedicated Full-Stack Web Developer with a passion for creating dynamic and user-friendly websites. Skilled in HTML, CSS, JavaScript, PHP, and React.js, I focus on building responsive designs and seamless user experiences. My curiosity for modern web technologies drives me to craft solutions that merge functionality and creativity.
+        </p>
+        <div>
+          <a
+            href="#projects"
+            className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 inline-block ${
+              darkMode
+                ? "border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white hover:border-purple-500 hover:shadow-sm hover:shadow-purple-700/50"
+                : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
+            }`}
+          >
+            View Projects
+          </a>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Education Section */}
       <section id="education" className={`py-16 ${themeStyles.bg} transition-colors duration-300`}>
@@ -301,117 +305,161 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Projects Section - Updated to match About section style without cards */}
-      <section id="projects" className={`py-16 ${themeStyles.bg} transition-colors duration-300`}>
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className={`text-3xl font-bold text-center mb-12 ${themeStyles.sectionHeading}`}>My Projects</h2>
-          
-          {/* Project 1 - Hotstar Clone - Content left, Image right (like About section) */}
-          <div className="mb-20 flex flex-col md:flex-row items-center">
-            {/* Content on the left */}
-            <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-              <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Hotstar Clone</h3>
-              <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Designed a responsive video streaming platform with fixed vertical sidebar, hover effects, autoplay videos, 
-                and horizontal scrolling carousels for a visually appealing user experience.
-              </p>
-              
-              <div className="mb-6">
-                {/* <h4 className="text-purple-500 font-medium mb-2">Technologies Used:</h4> */}
-                <p>HTML,CSS</p>
-              </div>
-              
-              <div className="flex space-x-6">
-                <a href="https://saranya544.github.io/hotstar-clone/" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
-    darkMode 
-      ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
-      : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
-  }`}>View Project</a>
-                <a href="https://github.com/saranya544/hotstar-clone" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
-    darkMode 
-      ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
-      : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
-  }`}>GitHub</a>
-              </div>
-            </div>
-            
-            {/* Image on the right */}
-            <div className="md:w-1/2">
-              <img 
-                src="hotstar.png" 
-                alt="Hotstar Clone" 
-                className="rounded-lg shadow-lg w-full h-auto"
-              />
-            </div>
-          </div>
-
-          {/* Project 2 - Google Clone - Image left, content right (alternating) */}
-          <div className="mb-20 flex flex-col-reverse md:flex-row items-center">
-            {/* Image on the left */}
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <img 
-                src="google-clone.png" 
-                alt="Google Clone" 
-                className="rounded-lg shadow-lg w-full h-auto"
-              />
-            </div>
-            
-            {/* Content on the right */}
-            <div className="md:w-1/2 md:pl-12">
-              <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Google Clone</h3>
-              <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                Created a responsive Google search page clone using HTML and CSS, accurately replicating the classic Google search interface with a functional search bar, voice search, and image search icons.
-              </p>
-              
-              <div className="mb-6">
-                <p>HTML, CSS</p>
-              </div>
-              
-              <div className="flex space-x-6">
-                <a href="https://saranya544.github.io/Google-Clone/" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
-    darkMode 
-      ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
-      : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
-  }`}>View Project</a>
-                <a href="https://github.com/saranya544/Google-Clone" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
-    darkMode 
-      ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
-      : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
-  }`}>GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          {/* Project 3 - Bookstore - Content left, Image right (alternating) */}
-          <div className="flex flex-col md:flex-row items-center">
-            {/* Content on the left */}
-            <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-              <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Bookstore</h3>
-              <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              Developed a bookstore website using PHP and HTML/CSS with dynamic inventory management. Implemented a date-based reporting system 
-              to track book sales and revenue between specified dates. When a user purchases a book, the required quantity is deducted from the
-              stock automatically. Additionally, when a book is sold, the counter updates to reflect the increased sales amount and the number of books sold, 
-              ensuring accurate revenue and inventory tracking.
-              </p>
-              
-              <div className="mb-6">
-                <p>HTML, CSS, PHP</p>
-              </div>
-              
-              {/* No links for Bookstore project as in original code */}
-            </div>
-            
-            {/* Image on the right */}
-            <div className="md:w-1/2">
-              <img 
-                src="bookstore.png" 
-                alt="Bookstore" 
-                className="rounded-lg shadow-lg w-full h-auto"
-              />
-            </div>
-          </div>
+      {/* Projects Section - Updated with improved mobile responsiveness */}
+<section id="projects" className={`py-16 ${themeStyles.bg} transition-colors duration-300`}>
+<div className="max-w-6xl mx-auto px-4">
+  <h2 className={`text-3xl font-bold text-center mb-12 ${themeStyles.sectionHeading}`}>My Projects</h2>
+  
+  {/* Project 1 - Hotstar Clone */}
+  <div className="mb-20 flex flex-col md:flex-row items-center">
+    {/* Content section - reordered for mobile */}
+    <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12 flex flex-col w-full">
+      {/* Heading always appears first */}
+      <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} order-first`}>Hotstar Clone</h3>
+      
+      {/* Image appears second on mobile, hidden on larger screens */}
+      <div className="md:hidden mb-6 order-2">
+        <img 
+          src="hotstar.png" 
+          alt="Hotstar Clone" 
+          className="rounded-lg shadow-lg w-full h-auto"
+        />
+      </div>
+      
+      {/* Description appears third on mobile */}
+      <div className="order-3">
+        <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          Designed a responsive video streaming platform with fixed vertical sidebar, hover effects, autoplay videos, 
+          and horizontal scrolling carousels for a visually appealing user experience.
+        </p>
+        
+        <div className="mb-6">
+          <p>HTML, CSS</p>
         </div>
-      </section>
+      </div>
+      
+      {/* Buttons appear last on mobile */}
+      <div className="flex space-x-6 order-4">
+        <a href="https://saranya544.github.io/hotstar-clone/" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
+darkMode 
+? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
+: "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
+}`}>View Project</a>
+        <a href="https://github.com/saranya544/hotstar-clone" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
+darkMode 
+? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
+: "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
+}`}>GitHub</a>
+      </div>
+    </div>
+    
+    {/* Image on larger screens - hidden on mobile */}
+    <div className="md:w-1/2 hidden md:block">
+      <img 
+        src="hotstar.png" 
+        alt="Hotstar Clone" 
+        className="rounded-lg shadow-lg w-full h-auto"
+      />
+    </div>
+  </div>
+
+  {/* Project 2 - Google Clone */}
+  <div className="mb-20 flex flex-col md:flex-row items-center">
+    {/* Content section - reordered for mobile */}
+    <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12 md:order-last flex flex-col w-full">
+      {/* Heading always appears first */}
+      <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} order-first`}>Google Clone</h3>
+      
+      {/* Image appears second on mobile, hidden on larger screens */}
+      <div className="md:hidden mb-6 order-2">
+        <img 
+          src="google-clone.png" 
+          alt="Google Clone" 
+          className="rounded-lg shadow-lg w-full h-auto"
+        />
+      </div>
+      
+      {/* Description appears third on mobile */}
+      <div className="order-3">
+        <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          Created a responsive Google search page clone using HTML and CSS, accurately replicating the classic Google search interface with a functional search bar, voice search, and image search icons.
+        </p>
+        
+        <div className="mb-6">
+          <p>HTML, CSS</p>
+        </div>
+      </div>
+      
+      {/* Buttons appear last on mobile */}
+      <div className="flex space-x-6 order-4">
+        <a href="https://saranya544.github.io/Google-Clone/" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
+darkMode 
+? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
+: "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
+}`}>View Project</a>
+        <a href="https://github.com/saranya544/Google-Clone" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
+darkMode 
+? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
+: "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
+}`}>GitHub</a>
+      </div>
+    </div>
+    
+    {/* Image on larger screens - hidden on mobile */}
+    <div className="md:w-1/2 hidden md:block">
+      <img 
+        src="google-clone.png" 
+        alt="Google Clone" 
+        className="rounded-lg shadow-lg w-full h-auto"
+      />
+    </div>
+  </div>
+
+  {/* Project 3 - Bookstore */}
+  <div className="flex flex-col md:flex-row items-center">
+    {/* Content section - reordered for mobile */}
+    <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12 flex flex-col w-full">
+      {/* Heading always appears first */}
+      <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} order-first`}>Bookstore</h3>
+      
+      {/* Image appears second on mobile, hidden on larger screens */}
+      <div className="md:hidden mb-6 order-2">
+        <img 
+          src="bookstore.png" 
+          alt="Bookstore" 
+          className="rounded-lg shadow-lg w-full h-auto"
+        />
+      </div>
+      
+      {/* Description appears third on mobile */}
+      <div className="order-3">
+        <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+          Developed a bookstore website using PHP and HTML/CSS with dynamic inventory management. Implemented a date-based reporting system 
+          to track book sales and revenue between specified dates. When a user purchases a book, the required quantity is deducted from the
+          stock automatically. Additionally, when a book is sold, the counter updates to reflect the increased sales amount and the number of books sold, 
+          ensuring accurate revenue and inventory tracking.
+        </p>
+        
+        <div className="mb-6">
+          <p>HTML, CSS, PHP</p>
+        </div>
+      </div>
+      
+      {/* No buttons for Bookstore project as in original code */}
+    </div>
+    
+    {/* Image on larger screens - hidden on mobile */}
+    <div className="md:w-1/2 hidden md:block">
+      <img 
+        src="bookstore.png" 
+        alt="Bookstore" 
+        className="rounded-lg shadow-lg w-full h-auto"
+      />
+    </div>
+  </div>
+</div>
+</section>
+
 
       {/* Skills Section */}
       <section id="skills" className={`py-16 ${themeStyles.bg} transition-colors duration-300`}>
