@@ -220,33 +220,40 @@ const Portfolio = () => {
          
      
 
-      {/* About Section - Modified with image and improved responsive layout */}
+      {/* About Section - Modified with vertically centered content */}
 <section id="about" className={`py-20 ${themeStyles.bg} transition-colors duration-300`}>
   <div className="max-w-6xl mx-auto px-4">
-    {/* Heading appears first on all screen sizes */}
-    <h2 className={`text-3xl font-bold mb-6 ${themeStyles.sectionHeading} text-center md:text-left`}>About Me</h2>
+    {/* Heading appears first on mobile but stays with content on desktop */}
+    <h2 className={`text-3xl font-bold mb-6 ${themeStyles.sectionHeading} text-center md:text-left md:hidden`}>
+      About Me
+    </h2>
     
     <div className="flex flex-col md:flex-row items-center">
-      {/* Image comes second on mobile, but moves to left on desktop */}
+      {/* Image comes second on mobile, first on desktop */}
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <img
           src="about-me1.jpg"
           alt="Laptop with code and coffee cup"
-          className="rounded-lg shadow-lg mx-auto md:mx-0"
+          className="rounded-lg shadow-lg mx-auto md:mx-0 w-full h-auto"
         />
       </div>
       
-      {/* Content comes third on mobile, moves to right on desktop */}
+      {/* Content on the right with heading above it on desktop */}
       <div className="w-full md:w-1/2 md:pl-12">
+        {/* Heading appears only on desktop, right side above content */}
+        <h2 className={`text-3xl font-bold mb-6 ${themeStyles.sectionHeading} text-left hidden md:block`}>
+          About Me
+        </h2>
+        
         <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
           I'm Saranya Dogiparthi, a dedicated Full-Stack Web Developer with a passion for creating dynamic and user-friendly websites. Skilled in HTML, CSS, JavaScript, PHP, and React.js, I focus on building responsive designs and seamless user experiences. My curiosity for modern web technologies drives me to craft solutions that merge functionality and creativity.
         </p>
         <div>
           <a
             href="#projects"
-            className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 inline-block ${
-              darkMode
-                ? "border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white hover:border-purple-500 hover:shadow-sm hover:shadow-purple-700/50"
+            className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
+              darkMode 
+                ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
                 : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
             }`}
           >
@@ -363,57 +370,49 @@ darkMode
     </div>
   </div>
 
-  {/* Project 2 - Google Clone */}
-  <div className="mb-20 flex flex-col md:flex-row items-center">
-    {/* Content section - reordered for mobile */}
-    <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12 md:order-last flex flex-col w-full">
-      {/* Heading always appears first */}
-      <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} order-first`}>Google Clone</h3>
-      
-      {/* Image appears second on mobile, hidden on larger screens */}
-      <div className="md:hidden mb-6 order-2">
-        <img 
-          src="google-clone.png" 
-          alt="Google Clone" 
-          className="rounded-lg shadow-lg w-full h-auto"
-        />
-      </div>
-      
-      {/* Description appears third on mobile */}
-      <div className="order-3">
-        <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-          Created a responsive Google search page clone using HTML and CSS, accurately replicating the classic Google search interface with a functional search bar, voice search, and image search icons.
-        </p>
+  {/* Project 2 - Google Clone */}   
+<div className="mb-20 flex flex-col md:flex-row items-center md:gap-8">
+  {/* Content section - reordered for mobile */}
+  <div className="md:w-1/2 mb-8 md:mb-0 md:pl-8 md:order-last flex flex-col w-full">
+    {/* Heading always appears first */}
+    <h3 className={`text-2xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'} order-first`}>Google Clone</h3>
         
-        <div className="mb-6">
-          <p>HTML, CSS</p>
-        </div>
-      </div>
-      
-      {/* Buttons appear last on mobile */}
-      <div className="flex space-x-6 order-4">
-        <a href="https://saranya544.github.io/Google-Clone/" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
-darkMode 
-? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
-: "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
-}`}>View Project</a>
-        <a href="https://github.com/saranya544/Google-Clone" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${
-darkMode 
-? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50" 
-: "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50"
-}`}>GitHub</a>
-      </div>
-    </div>
-    
-    {/* Image on larger screens - hidden on mobile */}
-    <div className="md:w-1/2 hidden md:block">
-      <img 
-        src="google-clone.png" 
-        alt="Google Clone" 
+    {/* Image appears second on mobile, hidden on larger screens */}
+    <div className="md:hidden mb-6 order-2">
+      <img
+        src="google-clone.png"
+        alt="Google Clone"
         className="rounded-lg shadow-lg w-full h-auto"
       />
     </div>
+        
+    {/* Description appears third on mobile */}
+    <div className="order-3">
+      <p className={`mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+        Created a responsive Google search page clone using HTML and CSS, accurately replicating the classic Google search interface with a functional search bar, voice search, and image search icons.
+      </p>
+            
+      <div className="mb-6">
+        <p>HTML, CSS</p>
+      </div>
+    </div>
+        
+    {/* Buttons appear last on mobile */}
+    <div className="flex space-x-6 order-4">
+      <a href="https://saranya544.github.io/Google-Clone/" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${ darkMode  ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50"  : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50" }`}>View Project</a>
+      <a href="https://github.com/saranya544/Google-Clone" target="_blank" rel="noopener noreferrer" className={`border-2 px-6 py-2 rounded-md font-medium transition duration-200 ${ darkMode  ? "border-purple-500 text-purple-400 hover:bg-purple-0 hover:text-purple-700 hover:border-purple-800 hover:shadow-sm hover:shadow-purple-700/50"  : "bg-purple-600 border-purple-600 text-white hover:bg-purple-700 hover:border-purple-700 hover:shadow-sm hover:shadow-purple-700/50" }`}>GitHub</a>
+    </div>
   </div>
+      
+  {/* Image on larger screens - hidden on mobile */}
+  <div className="md:w-1/2 hidden md:block">
+    <img
+      src="google-clone.png"
+      alt="Google Clone"
+      className="rounded-lg shadow-lg w-full h-auto"
+    />
+  </div>
+</div>
 
   {/* Project 3 - Bookstore */}
   <div className="flex flex-col md:flex-row items-center">
